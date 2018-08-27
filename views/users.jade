@@ -1,0 +1,8 @@
+nav
+    ul
+        li
+            a(href="/") Home
+
+ul
+    each user in users
+        li email: #{user.email}  password: #{user.password} id: #{user._id}

@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.form {
+  display: inline-block;
+  width: 50%;
+}
+
+input {
+  display: inline-block;
+  width: 100%;
+  margin: 1rem;
+  padding: .2rem;
+}
+
+input[type="submit"] {
+  width: 25rem;
+  background-color: orangered;
+  color: white;
+  padding: .4rem;
+  border-radius: 3px;
+}
