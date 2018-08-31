@@ -1,0 +1,10 @@
+extends layout
+include mixins/_orderForm
+
+block content
+	h2= title
+	+orderForm()
+	ul
+		li 1
+		li 2
+		li 3

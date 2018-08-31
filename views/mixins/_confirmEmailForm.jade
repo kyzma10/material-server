@@ -1,0 +1,7 @@
+mixin confirmEmailForm()
+	form.form(action="/confirm_email" method="post")
+		label(for="email") Verify Email
+		input(type="email" name="email")
+		label(for="verify_code") Enter your code
+		input(type="text" name="verify_code")
+		input(type="submit" value="Verify email   \u{2620}")

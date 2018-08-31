@@ -1,0 +1,9 @@
+mixin orderForm()
+	form.form(action="/dashboard", metthod="post")
+		label(for="category") Enter Category
+		input(type="text", name="category")
+		label(for="description") Enter your description
+		input(type="text" name="description")
+		label(for="price") Price value
+		input(type="text" name="price")
+		input(type="submit" value="Add Expenses  \u{2620}")
