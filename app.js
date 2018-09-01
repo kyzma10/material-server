@@ -2,6 +2,7 @@ const User = require('./models/user');
 const passportLocalMongoose = require('passport-local-mongoose');
 // const crypto = require('crypto');
 const md5 = require('md5');
+const LinkedList = require('./helpers/linkedList');
 
 var createError = require('http-errors');
 var express = require('express');
@@ -87,7 +88,7 @@ app.use((req, res, next) => {
 });
 
 /*create new user in data base*/
-/*const user = new User({email: 'test2@com.ua', password: '0008888'});
+/*const user = new User({orderList: [{category: 'Category1'}, {category: 'Category2'}]});
 console.log('user', user);
 
 user.save((err, user) => {
@@ -95,6 +96,14 @@ user.save((err, user) => {
         console.log('err', err)
     }
     console.log('saved user', user)
+});*/
+
+/*update orderList in model*/
+// const user = new User;
+/*User.findOne({email: 'test5@com.ua'}, (error, user) => {
+  console.log(user);
+  user.orderList.push({category: 'Category2'});
+  user.save()
 });*/
 
 /*finding user from database*/
@@ -147,7 +156,9 @@ passport.use(new JwtStrategy(jwtOptions, function (payload, done) {
   })
 );
 
-/*User.findOne({email: 'test@com.ua'}, function(error, user){
+
+
+/*User.findOne({email: 'test5@com.ua'}, function(error, user){
   if (error) console.log(error);
   const id = user._id;
   console.log(user._id);
@@ -164,14 +175,20 @@ passport.use(new JwtStrategy(jwtOptions, function (payload, done) {
   console.log(user)
 });*/
 
+/*let linkedList = new LinkedList;
+linkedList.addToHead(5);
+linkedList.addToTail(3);
 
+console.log('linkedLIST', linkedList);
+console.log(linkedList.search(5));*/
+// console.log('INDEXOF', linkedList.indexOf(5));
 // User.update()
-/*var token = jwt.sign({email: 'test@com.ua', id: '12qwe334reww3'}, 'supersecret', { expiresIn: 300 })
-console.log('!!!!!!!!!!!!MaIN TOKEN111111111::::::::::::', token);
+// var token = jwt.sign({email: 'test@com.ua', id: '12qwe334reww3'}, 'supersecret', { expiresIn: 300 })
+// console.log('!!!!!!!!!!!!MaIN TOKEN111111111::::::::::::!!!!!!!!    ', token);
 
-var token1 = jwt.sign({email: 'test@com.ua', id: '12qwe334reww3'}, 'supersecret', { expiresIn: 300 })
-console.log('!!!!!!!!!!!!MaIN TOKEN222222222222::::::::::::', token1);
-const secret = md5('test2@com.ua');
-console.log(secret);*/
+// var token1 = jwt.sign({email: 'test@com.ua', id: '12qwe334reww3'}, 'supersecret', { expiresIn: 300 })
+// console.log('!!!!!!!!!!!!MaIN TOKEN222222222222::::::::::::', token1);
+// const secret = md5('test2@com.ua');
+// console.log(secret);
 
 module.exports = app;

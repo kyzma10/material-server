@@ -7,6 +7,10 @@ const passport = require('passport');
 const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
 const crypto = require('crypto');
+const Category = require('./category');
+const cat = new Category({});
+
+const categorySchema = Schema({category: String});
 
 const userSchema = Schema({
     email: {
@@ -28,9 +32,9 @@ const userSchema = Schema({
       default: false
     },
 
-    orderList: {
-        type: Array
-    }
+    orderList: [
+      categorySchema
+    ]
 });
 
 userSchema.methods.verifyPassword = function verifyPassword(password) {
